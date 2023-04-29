@@ -13,11 +13,12 @@ h1 {
 
 body {
     background-color: blanchedalmond;
+    font-family: monospace;
 }
 
 .flash {
     animation-name: flash;
-    animation-duration: 0.5s;
+    animation-duration: 0.4s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
@@ -25,8 +26,8 @@ body {
 
 
 @keyframes flash {
-    from{color: red;}
-    to {color:black;}
+    from{color: darkred;}
+    to {color:#cd6e00;}
 }
 
 

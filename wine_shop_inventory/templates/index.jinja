@@ -3,22 +3,28 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <body>
-    <div class = "page-container">
-        <h3> Inventory (WINE): </h3>
-    {%for wine in all_wines%}   
-    <b>{{wine.name}} </b> <br> <i> Description:</i> {{wine.description}}<br>
-    (STOCK) Bottle Count: {{wine.stock_quantity}} 
 
-    {% if wine.stock_quantity <= 6 %}
+
+<div class = "page-container">
+        <h3> Inventory (WINE): </h3>
+
+        {%for wine in all_wines%}   
+        <b>{{wine.name}} </b> <br>
+        <i> Description:</i> {{wine.description}} <br>
+        (STOCK COUNT): <b>{{wine.stock_quantity}}</b> <br>
+
+        {% if wine.stock_quantity <= 0 %}
+        <span class="flash"> <b>OUT OF STOCK! </b></span> <br><br>
+
+        {% elif wine.stock_quantity > 6 %}
+        <br>
     
-    <span class="flash"> <b>LOW STOCK! </b></p>
-    </span>
-    
-{%else%}
-    
-{%endif%}
-{%endfor%}
+        {% elif wine.stock_quantity  <= 6 %}
+        <span style="color:#cd6e00;"> <b> LOW STOCK </b></span> <br><br>
+
+    {%endif%}
+    {%endfor%}
+
 </div>
 {% endblock %}
-    </div>
 </body>
