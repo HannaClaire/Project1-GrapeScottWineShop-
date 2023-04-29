@@ -1,13 +1,13 @@
 from flask import Flask, render_template
 
-from controllers.wines_controller import books_blueprint
+from controllers.wines_controller import wines_blueprint
 
 app = Flask(__name__)
 
-app.register_blueprint(books_blueprint)
+app.register_blueprint(wines_blueprint)
 
 
-@app.route('/')
+@app.route('/wines')
 def home():
     return render_template('index.html')
 

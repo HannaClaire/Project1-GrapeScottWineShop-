@@ -1,7 +1,14 @@
-{% extends "base.html" %}
+{% extends "base.jinja" %}
 {% block content %}
 
 <header>
-<h2> Bottle Inventory </h2>
+<h3> Bottle Inventory: </h3>
 </header>
+
+    {%for wine in all_wines%}
+<div>
+<p> {{wine.name}},<Br> <b>Description:</b> {{wine.description}}<br>
+(STOCK) Bottle Count: {{wine.stock_quantity}} </p>
+</div>
+{%endfor%}
 {% endblock %}
