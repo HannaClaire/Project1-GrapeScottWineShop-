@@ -14,13 +14,13 @@
         (STOCK COUNT): <b>{{wine.stock_quantity}}</b> <br>
 
         {% if wine.stock_quantity <= 0 %}
-        <span class="flash"> <b>OUT OF STOCK! </b></span> <br><br>
+        <span class="flash out-of-stock"> <b>OUT OF STOCK! </b></span> <br><br>
 
         {% elif wine.stock_quantity > 6 %}
         <br>
     
         {% elif wine.stock_quantity  <= 6 %}
-        <span style="color:#cd6e00;"> <b> LOW STOCK </b></span> <br><br>
+        <span style="color:#c7a035; font-size: 17px"> <b>LOW STOCK </b></span> <br><br>
 
     {%endif%}
     {%endfor%}

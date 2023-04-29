@@ -32,3 +32,8 @@ def select(id):
         result = results [0]
         producer = Producer(result['name'], result['id'])
     return producer
+
+
+def delete_all():
+    sql = "DELETE  FROM producers"
+    run_sql(sql)

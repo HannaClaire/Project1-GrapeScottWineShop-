@@ -24,6 +24,10 @@ body {
     animation-play-state: running;
 }
 
+.out-of-stock{
+    font-size: 18px;
+
+}
 
 @keyframes flash {
     from{color: darkred;}

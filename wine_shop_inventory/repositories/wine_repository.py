@@ -23,3 +23,8 @@ def select_all():
         wine = Wine (row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_price'], producer, row['id'])
         wines.append(wine)
     return wines
+
+
+def delete_all():
+    sql = "DELETE  FROM wines"
+    run_sql(sql)
