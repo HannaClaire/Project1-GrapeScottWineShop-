@@ -1,3 +1,44 @@
 header{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: fantasy;
+    color: darkolivegreen;
+
 }
+
+h1 {
+    border: 5px;
+    padding: 2px;
+    
+}
+
+
+body {
+    background-color: blanchedalmond;
+}
+
+.flash {
+    animation-name: flash;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+
+@keyframes flash {
+    from{color: red;}
+    to {color:black;}
+}
+
+
+footer {
+    padding-left: 20px;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 1200px;
+    height: 50px;
+    color: black;
+    font-family: monospace;
+    background-image: url(https://plus.unsplash.com/premium_photo-1677539897144-0d92297cd3d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fHdpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
+}
+
