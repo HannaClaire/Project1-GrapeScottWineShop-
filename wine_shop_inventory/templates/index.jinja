@@ -1,14 +1,20 @@
+
 {% extends "base.jinja" %}
 {% block content %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <header>
 <h3> Bottle Inventory: </h3>
 </header>
 
-    {%for wine in all_wines%}
+{%for wine in all_wines%}
 <div>
 <p> {{wine.name}},<Br> <b>Description:</b> {{wine.description}}<br>
 (STOCK) Bottle Count: {{wine.stock_quantity}} </p>
-</div>
+{% if wine.stock_quantity <= 6 %}
+    <p style="color:red;"> LOW STOCK </p>
+{%else%}
+    <p>{{ wine.stock_quantity }}</p>
+{%endif%}
 {%endfor%}
+</div>
 {% endblock %}
