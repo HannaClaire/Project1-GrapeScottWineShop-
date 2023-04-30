@@ -1,31 +1,17 @@
 
+<div class="page-container">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% extends "base.jinja" %}
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<body>
-<div class = "page-container">
-        <h2> Inventory (WINE): </h2>
-
-        {%for wine in all_wines%}   
-        <b><span style="font-size:16px">{{wine.name}}: </b></span> <br><hr>
-        <i>Selling Price</i>: {{ wine.selling_price}} <br><hr>
-        <i>Buying cost</i>: {{ wine.buying_cost}}<br><hr>
-        <i> Description</i>: {{ wine.description}} <br><hr>
-        <span style="font-size: 14.5px"><i>STOCK COUNT</i></span>: <b>{{ wine.stock_quantity}}</b> 
-        
-        {% if wine.stock_quantity <= 0 %}
-        <span class="flash out-of-stock"> <b>OUT OF STOCK! </b></span> <br>
-
-        {% elif wine.stock_quantity > 6 %}
-        <br><br>
-    
-        {% elif wine.stock_quantity  <= 6 %}
-        <span style="color:#c7a035; font-size: 17px"> <b>LOW STOCK </b></span> <br><br>
-
-    {%endif%}
-    {%endfor%}
-
-
+<nav>
+    <ul class="menu">
+        <li><a href="{{ url_for('wines.wines') }}">Wine</a></li>
+    </ul>
+</nav>
 </div>
-{% endblock %}
-</body>
+{%endblock%}
+<footer class="footer">
+    <p>
+        <h3> &copy; GrapeScott inc 2023</h3>
+    </p>
+</footer>

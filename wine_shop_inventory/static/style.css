@@ -5,13 +5,16 @@ header{
 }
 
 
-
 h1 {
-    text-align: center;
+    text-align: center ;
     font-size: 30px;
     border: 5px;
     padding: 2px;
     
+}
+
+.menu>ul>li>a {
+    text-align: center
 }
 
 h2 {
@@ -22,6 +25,7 @@ h2 {
 body {
     background-color: blanchedalmond;
     font-family: monospace;
+    margin-left: auto;
 }
 
 .flash {
@@ -42,16 +46,32 @@ body {
     to {color:#cd6e00;}
 }
 
+.page-container {
+
+    min-height: 100%;
+}
 
 footer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2.5px;
     padding-left: 20px;
-    position: fixed;
+    position: relative;
     bottom: 0;
-    left:0;
-    width: 1200px;
-    height: 50px;
+    left: 0%;
+    width: 100%;
     color: black;
     font-family: monospace;
     background-image: url(https://plus.unsplash.com/premium_photo-1677539897144-0d92297cd3d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fHdpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60);
 }
 
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    padding-left: 20px;
+    
+}

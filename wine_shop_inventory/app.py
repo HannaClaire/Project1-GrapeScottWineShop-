@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.register_blueprint(wines_blueprint)
 
 
-@app.route('/wines')
+@app.route('/home')
 def home():
-    return render_template('index.html')
+    return render_template('index.jinja')
 
 
 if __name__ == '__main__':

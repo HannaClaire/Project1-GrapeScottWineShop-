@@ -5,11 +5,10 @@ from models.producer import Producer
 import repositories.wine_repository as wine_repo
 import repositories.producer_repository as producer_repo
 
-
 wines_blueprint = Blueprint("wines", __name__)
 
 @wines_blueprint.route("/wines")
 def wines():
     wines = wine_repo.select_all()
-    return render_template("index.jinja", all_wines = wines)
+    return render_template("wines/index.jinja", all_wines = wines)
 
