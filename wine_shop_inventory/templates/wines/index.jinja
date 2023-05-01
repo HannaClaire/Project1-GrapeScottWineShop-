@@ -1,3 +1,7 @@
+
+{# MAIN PAGE #}
+
+
 {% extends "base.jinja" %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -13,11 +17,11 @@
         <h2> Inventory (WINE): </h2>
 
         {%for wine in all_wines%}
-        <b><span style="font-size:16px">{{wine.name}}: </b></span> <br>
+        <li><a href="/wines/{{wine.name}}"><b><span style="font-size:16px">{{wine.name}}: </b></span></a><br>
         <hr>
         <i>Selling Price</i>: {{ wine.selling_price}} <br>
         <hr>
-        <i>Buying cost</i>: {{ wine.buying_cost}}<br>
+        <i>Buying cost</i>: {{ wine.buying_cost}},<i> <b>Markup(%)</b></i>: {{ wine.get_markup()}}<br>
         <hr>
         <i> Description</i>: {{ wine.description}} <br>
         <hr>

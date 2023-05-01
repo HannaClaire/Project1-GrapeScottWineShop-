@@ -9,8 +9,7 @@ app.register_blueprint(wines_blueprint)
 
 @app.route('/home')
 def home():
-    return render_template('index.jinja')
-
+    return render_template('home.jinja')
 
 if __name__ == '__main__':
     app.run(debug=True)
