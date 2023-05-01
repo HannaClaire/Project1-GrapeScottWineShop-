@@ -17,7 +17,7 @@
         <h2> Inventory (WINE): </h2>
 
         {%for wine in all_wines%}
-        <li><a href="/wines/{{wine.name}}"><b><span style="font-size:16px">{{wine.name}}: </b></span></a><br>
+        <li><a href="/wines/{{wine.id}}"><b><span style="font-size:16px">{{wine.name}}: </b></span></a><br>
         <hr>
         <i>Selling Price</i>: {{ wine.selling_price}} <br>
         <hr>

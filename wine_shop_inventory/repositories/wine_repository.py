@@ -35,6 +35,16 @@ def delete_all():
 
 
 
+def select(id):
+    wine = []
+    sql = "SELECT * FROM wines WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        producer = producer_repo.select(result['producer_id'])
+        wine = Wine(result ['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_price'], producer, result['id'])
+        return wine
 
 
 

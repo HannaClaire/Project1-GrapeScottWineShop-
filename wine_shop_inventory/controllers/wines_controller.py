@@ -18,8 +18,8 @@ def wines():
 
 @wines_blueprint.route("/wines/<id>", methods = ['GET'])
 def wine(id):
-    wines = wine_repo.select_all()
-    return render_template("/wines/show.jinja", all_wines = wines)
+    wines = wine_repo.select(id)
+    return render_template("/wines/show.jinja", wines = wines)
 
 
 
