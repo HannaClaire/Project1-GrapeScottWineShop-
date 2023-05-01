@@ -30,7 +30,7 @@ def select(id):
 
     if results:
         result = results [0]
-        producer = Producer(result['name'], result['id'])
+        producer = Producer(result['name'],result['id'])
     return producer
 
 

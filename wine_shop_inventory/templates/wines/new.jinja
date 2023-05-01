@@ -1,0 +1,47 @@
+{% extends "base.jinja" %}
+{% block content %}
+
+
+
+<form action="{{ url_for('wines.add_wine') }}" method="POST">
+
+    <div>
+        <label for="name"> Wine:</label>
+        <input type="text" id="text" name="name" placeholder="wine" required autofocus>
+    </div>
+    <br>
+    <div>
+        <label for="description"> Description:</label>
+        <input type="text" id="text" name="description" placeholder="description">
+    </div>
+    <br>
+    <div>
+        <label for="stock-quantity"> Stock Quantity:</label>
+        <input type="number" id="number" name="stock_quantity" placeholder="stock-quantity">
+    </div>
+    <br>
+    <div>
+        <label for="buying-cost"> Buying Cost:</label>
+        <input type="text" id="text" name="buying_cost" placeholder="buying-cost">
+    </div>
+    <br>
+    <div>
+        <label for="selling-price"> Selling Price:</label>
+        <input type="text" id="text" name="selling_price" placeholder="selling-price">
+    </div>
+    <br>
+    <div>
+        <label for="producer_id"> Producer:</label>
+        <select name="producer_id" id="producer_id">
+            {% for producer in all_producers %}
+            <option value="{{ producer.id}}"> {{ producer.name}}</option>
+            {%endfor%}
+        </select>
+        <button type="submit">Add</button>
+    </div>
+
+
+    </div>
+</form>
+
+{%endblock%}

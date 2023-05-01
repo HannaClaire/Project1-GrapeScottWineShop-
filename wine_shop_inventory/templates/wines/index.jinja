@@ -9,13 +9,14 @@
 <nav>
     <ul class="menu">
         <li><a href="{{ url_for('home') }}">Back</a></li>
+        <li><a href ="{{ url_for('wines.new_wine') }}"> Add New </a></li>
     </ul>
 </nav>
 
 <body>
     
         <h2> Inventory (WINE): </h2>
-
+    <div>
         {%for wine in all_wines%}
         <li><a href="/wines/{{wine.id}}"><b><span style="font-size:16px">{{wine.name}}: </b></span></a><br>
         <hr>

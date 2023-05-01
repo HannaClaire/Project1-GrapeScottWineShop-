@@ -12,13 +12,13 @@
 </nav>
 <h2>{{wines.name}}</h2>
 
-
-<li><a href="/wines/{{wines.name}}"><b><span style="font-size:16px">{{wines.name}}: </b></span></a><br>
         <hr>
     <i>Selling Price</i>: {{ wines.selling_price}} <br>
         <hr>
-    <i>Buying cost</i>: {{ wines.buying_cost}},<i> <b>Markup(%)</b></i>: {{ wines.get_markup()}}<br>
+    <i>Buying cost</i>: {{ wines.buying_cost}} <br>
         <hr>
+    <i> <b>Markup(%)</b></i>: {{ wines.get_markup()}}<br>
+    <hr>
     <i> Description</i>: {{ wines.description}} <br>
         <hr>
 
@@ -32,8 +32,9 @@
         {% elif wines.stock_quantity <= 6 %} <span style="color:#c7a035; font-size: 17px"> <b>LOW STOCK </b></span>
             <br><br>
 
-            {%endif%}
+            {%endif%} 
+            <hr>
             
 
-
 {%endblock%}
+
