@@ -1,0 +1,34 @@
+{% extends "base.jinja" %}
+{% block content %}
+
+
+
+
+
+
+<nav>
+    <ul class="menu">
+        <li><a href="{{ url_for('wines.wines') }}">Back to wines</a></li>
+        
+    </ul>
+</nav>
+
+
+<div>
+    <p>{{producer.name}}</p>
+    {% for wine in wines %}
+    <hr>
+    <p>{{wine.name}}</p>
+    <p>{{wine.description}}</p>
+    <p>{{wine.stock_quantity}}</p>
+    <p>{{wine.buying_cost}}</p>
+    <p>{{wine.selling_price}}</p>
+    <p>{{wine.get_markup()}}</p>
+    {% endfor %}
+    
+</div>
+
+
+
+{%endblock%}
+

@@ -22,7 +22,7 @@ def wine(id):
     return render_template("/wines/show.jinja", wines = wines)
 
 
-#add page
+#'add' page
 @wines_blueprint.route("/wines/new", methods=['GET'])
 def new_wine():
     producers = producer_repo.select_all()
@@ -69,5 +69,16 @@ def update_wine(id):
     wine = Wine(name, description, stock_quantity, buying_cost,selling_price, producer_id)
     wine_repo.save(wine)
     return redirect (url_for('wines.wines'))
+
+
+# @wines_blueprint.route("/producer/<id>/wines") 
+# def get_wines_for_producer(id):
+#     producer = producer_repo.select(id)
+#     producer_wines = producer_repo.get_wines_for_producer(producer)
+
+
+
+
+
 
 

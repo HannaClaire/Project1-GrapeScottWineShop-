@@ -1,0 +1,36 @@
+{% extends "base.jinja" %}
+{% block content %}
+
+
+
+
+
+<nav>
+    <ul class="menu">
+        <li><a href="{{ url_for('wines.wines') }}">Back to wines</a></li>
+
+    </ul>
+</nav>
+
+
+
+<form action="/producers" method="POST">
+
+    <div>
+        <label for="name"> Producer:</label>
+        <input type="text" id="text" name="name" required autofocus>
+    </div>
+    <br>
+<button type="submit">Add</button>
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends "base.jinja" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="page-container"></div>
+<nav>
+    <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Back</a></li><br>
+        <li><a href="{{ url_for('wines.new_wine') }}"> Add New Wine</a></li><br>
+        <li><a href="{{ url_for('producers.new_producer') }}"> Add New Producer</a></li>
+    </ul>
+</nav>
+
+<body>
+
+    <h2> Inventory (PRODUCERS): </h2>
+    <div>
+        {%for producer in all_producers%}
+        <li><a href="/producers/{{producer.id}}"><b><span style="font-size:16px">{{producer.name}}:</b></span></a><br><br>
+            {{producer.name}} Vineyards <br>
+            
+
+                    {%endfor%}
+
+
+    </div>
+    {% endblock %}
+</body>

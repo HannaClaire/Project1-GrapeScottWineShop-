@@ -46,6 +46,27 @@ def select(id):
         producer = producer_repo.select(result['producer_id'])
         wine = Wine(result ['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_price'], producer, result['id'])
         return wine
+    
 
+def get_wines_for_producer(producer):
+    #  get all the wines
+    wines = []
+    sql = "SELECT * FROM wines WHERE producer_id = %s"
+    values = [producer.id]
+    results = run_sql(sql, values)
 
+    for row in results:
+        wine = Wine(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_price'], producer, row['id'])
+        wines.append(wine)
+    return wines
+    
+    
+    
+    
+    # if results:
+    #     result = results[0]
+    #     producer = producer_repo.select(result['producer_id'])
+    #     wines = Wine(result['name'], result['description'], result['stock_quantity'],
+    #                 result['buying_cost'], result['selling_price'], producer, result['id'])
+    #     return wines
 
