@@ -22,15 +22,15 @@ def wine(id):
     return render_template("/wines/show.jinja", wines = wines)
 
 
-#actually adding
-@wines_blueprint.route("/wines/add", methods=['GET'])
+#add page
+@wines_blueprint.route("/wines/new", methods=['GET'])
 def new_wine():
     producers = producer_repo.select_all()
     return render_template("wines/new.jinja", all_producers=producers)  #hadnt rendered template with wines/new - (hours worth of pain)!!!
 
 
-#add deets
-@wines_blueprint.route("/wines/new", methods =['POST'])
+#actually adding
+@wines_blueprint.route("/wines", methods =['POST'])
 def add_wine():
     name = request.form['name']
     description = request.form['description']
@@ -39,9 +39,6 @@ def add_wine():
     selling_price = request.form['selling_price']
     producer_id = int(request.form['producer_id'])
     producer = producer_repo.select(producer_id)
-    if not producer:
-        error_message = f"Producer with ID {producer_id} does not exist."
-        return render_template('error.html', message=error_message)
     wine = Wine(name, description, stock_quantity, buying_cost, selling_price, producer_id)
     wine_repo.save(wine)
     return redirect (url_for('wines.wines'))
