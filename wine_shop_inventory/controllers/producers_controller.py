@@ -23,7 +23,7 @@ def producers():
 def new_producer():
     return render_template("producers/new.jinja")
 
-
+# add
 @producers_blueprint.route("/producers", methods=['POST'])
 def add_producer():
     name = request.form['name']
@@ -31,7 +31,7 @@ def add_producer():
     producer_repo.save(producer)
     return redirect('/producers')
 
-
+# show
 @producers_blueprint.route("/producers/<id>", methods=['GET'])
 def show_producer(id):
     producer = producer_repo.select(id)
@@ -44,14 +44,14 @@ def show_producer(id):
 def edit_producer(id):
     producer = producer_repo.select(id)
     all_producers = producer_repo.select_all()
-    return render_template('producers/edit.jinja', producer = producer, all_producers = all_producers)
+    return render_template('producers/edit.jinja', producer=producer, all_producers=all_producers)
 
 
-
-# update
-@producers_blueprint.route("/producers/<id>", methods=['POST'])
+#update
+@producers_blueprint.route("/producers/<id>/update", methods=['POST'])
 def update_producer(id):
     name = request.form['name']
-    producer = producer_repo.select(producer)
+    producer = producer_repo.select(id)
+    producer = Producer(name)
     producer_repo.save(producer)
     return redirect(url_for('wines.wines'))

@@ -6,13 +6,13 @@
 <nav>
     <ul class="menu">
         <li><a href="{{ url_for('wines.wines') }}"> Back to wines</a></li><br>
-        <li><a href="/producer/{{producer.id}}/edit">> Add New Producer</a></li>
-        <li><a href="{{ url_for('producers.edit_producer', id=producer.id) }}">Cancel</a></li>
+        {# <li><a href="/producer/{{producer.id}}/edit"> Add New Producer</a></li> #}
+        
 
     </ul>
 </nav>
 
-<form action="/producer/{{producer.id}}" method="POST">
+    <form action="/producers/{{producer.id}}/update" method="POST">
 
     <div>
         <label for="name"> Wine:</label>
@@ -21,7 +21,15 @@
     <br>
 
 
-
+    <div>
+        <label for="producer_id"> Producer:</label>
+        <select name="producer_id" id="producer_id">
+            {% for producer in all_producers %}
+            <option value="{{ producer.id}}"> {{ producer.name}}</option>
+            {%endfor%}
+        </select>
+        <button type="submit">Update</button>
+    </div>
 
 
 
