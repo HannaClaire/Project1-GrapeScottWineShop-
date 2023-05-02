@@ -54,4 +54,4 @@ def update_producer(id):
     producer = producer_repo.select(id)
     producer = Producer(name)
     producer_repo.save(producer)
-    return redirect(url_for('wines.wines'))
+    return redirect(url_for('producers/edit.jinja'))

@@ -15,7 +15,7 @@
     <form action="/producers/{{producer.id}}/update" method="POST">
 
     <div>
-        <label for="name"> Wine:</label>
+        <label for="name"> Producer: </label>
         <input type="text" id="text" name="name" value="{{producer.name}}" required autofocus>
     </div>
     <br>
@@ -23,7 +23,7 @@
 
     <div>
         <label for="producer_id"> Producer:</label>
-        <select name="producer_id" id="producer_id">
+        <input type="hidden" name="producer_id" value="{{ producer.id }}">
             {% for producer in all_producers %}
             <option value="{{ producer.id}}"> {{ producer.name}}</option>
             {%endfor%}

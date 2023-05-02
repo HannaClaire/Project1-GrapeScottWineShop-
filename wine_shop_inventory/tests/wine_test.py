@@ -29,6 +29,6 @@ class TestWine(unittest.TestCase):
     def test_producer_has_name(self):
         self.assertEqual("FancyPants", self.producer1.name)
     
-    def test_inventory_markup(self):
-        self.assertEqual()
-
+    def test_get_markup(self):
+        mark_up = (self.wine1.get_markup())
+        self.assertEqual(100, mark_up)
