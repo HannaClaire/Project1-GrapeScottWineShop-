@@ -10,8 +10,8 @@
         <li><a href="{{ url_for('wines.wines') }}">Back to wines</a></li>
     </ul>
 </nav>
-<h2>{{wines.name}}</h2>
-
+<h2>{{wines.name}}</h2><br>
+{{wines.producer_id.name}} Vineyards
         <hr>
     <i>Selling Price</i>: {{ wines.selling_price}} <br>
         <hr>
