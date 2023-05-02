@@ -28,18 +28,18 @@
         <hr>
         <span style="font-size: 14.5px"><i>STOCK COUNT</i></span>: <b>{{ wine.stock_quantity}}</b>
 
-        {% if wine.stock_quantity <= 0 %} <span class="flash out-of-stock"> <b>OUT OF STOCK! </b></span> <br>
+        {% if wine.stock_quantity <= 0 %} <span class="flash out-of-stock"> <b>OUT OF STOCK! </b></span> <br><br><br>
 
             {% elif wine.stock_quantity > 6 %}
-            <br><br>
+            <br><br><br>
 
             {% elif wine.stock_quantity <= 6 %} <span style="color:#c7a035; font-size: 17px"> <b>LOW STOCK </b></span>
-                <br><br>
+                <br><br><br>
 
                 {%endif%}
                 {%endfor%}
 
 
     </div>
-    {% endblock %}
+    {% endblock %} 
 </body>
