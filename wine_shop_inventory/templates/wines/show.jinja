@@ -8,6 +8,7 @@
 <nav>
     <ul class="menu">
         <li><a href="{{ url_for('wines.wines') }}">Back to wines</a></li>
+        <li><a href="/wines/{{wines.id}}/edit"> Edit </a></li>
     </ul>
 </nav>
 <h2>{{wines.name}}</h2><br>

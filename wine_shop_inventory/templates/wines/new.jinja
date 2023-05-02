@@ -1,9 +1,15 @@
 {% extends "base.jinja" %}
 {% block content %}
 
-
-
-<form action="{{ url_for('wines.add_wine') }}" method="POST">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="page-container"></div>
+<nav>
+    <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('wines.wines') }}"> Wine</a></li>
+    </ul>
+</nav>
+<form action="/wines" method="POST">
 
     <div>
         <label for="name"> Wine:</label>
