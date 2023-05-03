@@ -12,7 +12,7 @@
     </ul>
 </nav>
 
-    <form action="/producers/{{producer.id}}/update" method="POST">
+    <form action="/producers/{{producer.id}}" method="POST">
 
     <div>
         <label for="name"> Producer: </label>
@@ -22,12 +22,7 @@
 
 
     <div>
-        <label for="producer_id"> Producer:</label>
-        <input type="hidden" name="producer_id" value="{{ producer.id }}">
-            {% for producer in all_producers %}
-            <option value="{{ producer.id}}"> {{ producer.name}}</option>
-            {%endfor%}
-        </select>
+        
         <button type="submit">Update</button>
     </div>
 

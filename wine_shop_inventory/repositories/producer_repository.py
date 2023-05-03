@@ -37,3 +37,9 @@ def select(id):
 def delete_all():
     sql = "DELETE  FROM producers"
     run_sql(sql)
+
+
+def update(producer):
+    sql = "UPDATE producers SET name = %s WHERE id = %s"
+    values = [producer.name, producer.id]
+    run_sql(sql, values)

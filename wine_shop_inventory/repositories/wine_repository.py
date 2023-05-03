@@ -9,7 +9,7 @@ import repositories.wine_repository as wine_repo
 
 def save(wine):
     sql = "INSERT INTO wines (name, description, stock_quantity, buying_cost, selling_price, producer_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
-    values = (wine.name, wine.description, wine.stock_quantity, wine.buying_cost, wine.selling_price, wine.producer_id)
+    values = (wine.name, wine.description, wine.stock_quantity, wine.buying_cost, wine.selling_price, wine.producer.id)
     results = run_sql(sql,values)
     id = results [0]['id']
     wine.id = id
@@ -48,6 +48,14 @@ def select(id):
         return wine
     
 
+
+def update_wine(wine):
+    sql = "UPDATE wines SET (name, description, stock_quantity, buying_cost, selling_price, producer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [wine.name, wine.description, wine.stock_quantity, wine.buying_cost, wine.selling_price, wine.producer.id, wine.id]
+    run_sql(sql, values)
+
+
+#technically extension
 def get_wines_for_producer(producer):
     #  get all the wines
     wines = []

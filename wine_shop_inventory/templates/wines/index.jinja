@@ -11,7 +11,6 @@
         <li><a href="{{ url_for('home') }}">Back</a></li><br>
         <li><a href ="{{ url_for('wines.new_wine') }}"> Add New Wine</a></li><br>
         <li><a href ="{{ url_for('producers.new_producer') }}"> Add New Producer</a></li><br>
-        <li><a href="/producers/{{producer_id}}/edit">Edit Producer</a></li><br>
         <li><a href="{{ url_for('producers.producers') }}">Producers</a></li>
         
         
@@ -23,7 +22,7 @@
         <h2> Inventory (WINE): </h2>
     <div>
         {%for wine in all_wines%}
-        <li><a href="/wines/{{wine.id}}"><b><span style="font-size:16px">{{wine.name}}:</b></span></a><br><br> {{wine.producer_id.name}} Vineyards <br>
+        <li><a href="/wines/{{wine.id}}"><b><span style="font-size:16px">{{wine.name}}:</b></span></a><br><br> {{wine.producer.name}} Vineyards <br>
         <hr>
         <i>Selling Price</i>: {{ wine.selling_price}} <br>
         <hr>

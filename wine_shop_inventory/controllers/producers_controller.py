@@ -48,10 +48,9 @@ def edit_producer(id):
 
 
 #update
-@producers_blueprint.route("/producers/<id>/update", methods=['POST'])
+@producers_blueprint.route("/producers/<id>", methods=['POST'])
 def update_producer(id):
     name = request.form['name']
-    producer = producer_repo.select(id)
-    producer = Producer(name)
-    producer_repo.save(producer)
-    return redirect(url_for('producers/edit.jinja'))
+    producer = Producer(name, id)
+    producer_repo.update(producer)
+    return redirect('/producers')

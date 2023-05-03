@@ -8,29 +8,29 @@
 <nav>
     <ul class="menu">
         <li><a href="{{ url_for('wines.wines') }}">Back to wines</a></li>
-        <li><a href="/wines/{{wines.id}}/edit"> Edit </a></li>
+        <li><a href="/wines/{{wine.id}}/edit"> Edit </a></li>
     </ul>
 </nav>
-<h2>{{wines.name}}</h2><br>
-{{wines.producer_id.name}} Vineyards
+<h2>{{wine.name}}</h2><br>
+{{wine.producer.name}} Vineyards
         <hr>
-    <i>Selling Price</i>: {{ wines.selling_price}} <br>
+    <i>Selling Price</i>: {{ wine.selling_price}} <br>
         <hr>
-    <i>Buying cost</i>: {{ wines.buying_cost}} <br>
+    <i>Buying cost</i>: {{ wine.buying_cost}} <br>
         <hr>
-    <i> <b>Markup(%)</b></i>: {{ wines.get_markup()}}<br>
+    <i> <b>Markup(%)</b></i>: {{ wine.get_markup()}}<br>
     <hr>
-    <i> Description</i>: {{ wines.description}} <br>
+    <i> Description</i>: {{ wine.description}} <br>
         <hr>
 
-    <span style="font-size: 14.5px"><i>STOCK COUNT</i></span>: <b>{{ wines.stock_quantity}}</b>
+    <span style="font-size: 14.5px"><i>STOCK COUNT</i></span>: <b>{{ wine.stock_quantity}}</b>
 
-    {% if wines.stock_quantity <= 0 %} <span class="flash out-of-stock"> <b>OUT OF STOCK! </b></span> <br>
+    {% if wine.stock_quantity <= 0 %} <span class="flash out-of-stock"> <b>OUT OF STOCK! </b></span> <br>
 
-        {% elif wines.stock_quantity > 6 %}
+        {% elif wine.stock_quantity > 6 %}
         <br><br>
 
-        {% elif wines.stock_quantity <= 6 %} <span style="color:#c7a035; font-size: 17px"> <b>LOW STOCK </b></span>
+        {% elif wine.stock_quantity <= 6 %} <span style="color:#c7a035; font-size: 17px"> <b>LOW STOCK </b></span>
             <br><br>
 
             {%endif%} 

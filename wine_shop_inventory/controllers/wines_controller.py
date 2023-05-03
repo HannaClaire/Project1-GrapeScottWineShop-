@@ -18,8 +18,8 @@ def wines():
 #show single wine deets
 @wines_blueprint.route("/wines/<id>", methods = ['GET'])
 def wine(id):
-    wines = wine_repo.select(id)
-    return render_template("/wines/show.jinja", wines = wines)
+    the_wine = wine_repo.select(id)
+    return render_template("/wines/show.jinja", wine=the_wine)
 
 
 #'add' page
@@ -54,7 +54,7 @@ def delete_wine(id):
 def edit_wine(id):
     wine = wine_repo.select(id)
     producers = producer_repo.select_all()
-    return render_template('wines/edit.jinja', wine = wine, all_producers = producers)
+    return render_template('wines/edit.jinja', wine = wine, producers = producers)
 
 #update
 @wines_blueprint.route("/wines/<id>", methods = ['POST'])
@@ -64,11 +64,10 @@ def update_wine(id):
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form['buying_cost']
     selling_price = request.form['selling_price']
-    producer_id = int(request.form['producer_id'])
-    producer = producer_repo.select(producer_id)
-    wine = Wine(name, description, stock_quantity, buying_cost,selling_price, producer, producer_id)
-    wine_repo.save(wine)
-    return redirect (url_for('wines.wines'))
+    producer = producer_repo.select(request.form['producer_id'])
+    wine = Wine(name, description, stock_quantity, buying_cost,selling_price, producer, id)
+    wine_repo.update_wine(wine)
+    return redirect (f'/wines/{id}')
 
 
 
