@@ -37,9 +37,8 @@ def add_wine():
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form['buying_cost']
     selling_price = request.form['selling_price']
-    producer_id = int(request.form['producer_id'])
-    producer = producer_repo.select(producer_id)
-    wine = Wine(name, description, stock_quantity, buying_cost, selling_price, producer_id)
+    producer = int(request.form['producer'])
+    wine = Wine(name, description, stock_quantity, buying_cost, selling_price, producer)
     wine_repo.save(wine)
     return redirect (url_for('wines.wines'))
 
@@ -64,7 +63,7 @@ def update_wine(id):
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form['buying_cost']
     selling_price = request.form['selling_price']
-    producer = producer_repo.select(request.form['producer_id'])
+    producer = producer_repo.select(request.form['producer'])
     wine = Wine(name, description, stock_quantity, buying_cost,selling_price, producer, id)
     wine_repo.update_wine(wine)
     return redirect (f'/wines/{id}')

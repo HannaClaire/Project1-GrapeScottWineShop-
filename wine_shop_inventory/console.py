@@ -12,12 +12,12 @@ producer1 = Producer("FancyPants")
 producer_repo.save(producer1)
 
 
-wine1 = Wine("Pinot Gris", "White - medium/full-bodied, Notes & flavours: delicate/floral aromatics; round feel, nutty/spicy, pears/melon on palette.", 6, 9, 18, producer1)  
+wine1 = Wine("Pinot Gris", "White - medium/full-bodied, Notes & flavours: delicate/floral aromatics; round feel, nutty/spicy, pears/melon on palette.", 6, 9, 18, producer1.id)  
 wine_repo.save(wine1)
 
-wine2 = Wine("Pinot Noir", "Red - light/medium-bodied, Notes & flavours: red fruits/spicey aromas, red fruits, clove, hibiscus, umami on palette.", 15, 10, 20, producer1)
+wine2 = Wine("Pinot Noir", "Red - light/medium-bodied, Notes & flavours: red fruits/spicey aromas, red fruits, clove, hibiscus, umami on palette.", 15, 10, 20, producer1.id)
 wine_repo.save(wine2)
 
-wine3 = Wine("Pinot Blanc", "White - medium/full-bodies, Notes & flavours: floral aromas, round feel, peaches/pears/almonds and slight minerality on the palette.", 0, 14, 22, producer1)
+wine3 = Wine("Pinot Blanc", "White - medium/full-bodies, Notes & flavours: floral aromas, round feel, peaches/pears/almonds and slight minerality on the palette.", 0, 14, 22, producer1.id)
 wine_repo.save(wine3)
 

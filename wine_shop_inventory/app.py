@@ -8,7 +8,7 @@ app.register_blueprint(wines_blueprint)
 app.register_blueprint(producers_blueprint)
 
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('home.jinja')
 

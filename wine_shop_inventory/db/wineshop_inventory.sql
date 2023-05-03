@@ -14,5 +14,5 @@ CREATE TABLE wines (
     stock_quantity INT,
     buying_cost INT,
     selling_price INT,
-    producer_id INT NOT NULL REFERENCES producers(id)
+    producer INT NOT NULL REFERENCES producers(id)
 );

@@ -2,7 +2,7 @@ import unittest
 from models.wine import Wine
 from models.producer import Producer
 
-
+# TODO fix to work with producer (meaning producer id), instead of whole producer object
 
 class TestWine(unittest.TestCase):
 
