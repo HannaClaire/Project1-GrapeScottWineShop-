@@ -11,6 +11,7 @@ producer_repo.delete_all()
 producer1 = Producer("FancyPants")
 producer_repo.save(producer1)
 
+
 wine1 = Wine("Pinot Gris", "White - medium/full-bodied, Notes & flavours: delicate/floral aromatics; round feel, nutty/spicy, pears/melon on palette.", 6, 9, 18, producer1)  
 wine_repo.save(wine1)
 

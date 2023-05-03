@@ -50,7 +50,7 @@ def select(id):
 
 
 def update_wine(wine):
-    sql = "UPDATE wines SET (name, description, stock_quantity, buying_cost, selling_price, producer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE wine SET (name, description, stock_quantity, buying_cost, selling_price, producer_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [wine.name, wine.description, wine.stock_quantity, wine.buying_cost, wine.selling_price, wine.producer.id, wine.id]
     run_sql(sql, values)
 
