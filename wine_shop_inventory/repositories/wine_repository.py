@@ -60,7 +60,7 @@ def get_wines_for_producer(producer):
     #  get all the wines
     wines = []
     sql = "SELECT * FROM wines WHERE producer = %s"
-    values = [producer]
+    values = [producer.id]
     results = run_sql(sql, values)
 
     for row in results:
